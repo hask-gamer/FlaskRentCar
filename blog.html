@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>Blog page</title>
+{% endblock %}
+
+
+{% block content %}
+  <section class="blog_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Our Latest Blog
+        </h2>
+        <p>
+          It is a long established fact that a reader will be distracted by the
+        </p>
+      </div>
+    </div>
+    <div class="blog_container">
+      <div class="layout_padding2-top">
+        <div class="carousel-wrap ">
+          <div class="owl-carousel">
+            {% for item in blogs %}
+            <div class="item">
+              <div class="box">
+                <div class="date-box">
+                  <h6>
+                    {{ item.4 }}
+                  </h6>
+                </div>
+                <div class="img-box">
+                  <img src="{{ item.3 }}" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ item.1 }}
+                  </h5>
+                  <p>{{ item.2 }}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
